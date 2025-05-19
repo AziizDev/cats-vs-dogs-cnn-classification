@@ -1,69 +1,80 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/r8OAyKH-)
-# CNN Classification Task with Cat-vs-Dog dataset
+# 🐶🐱 Cats vs Dogs - CNN Image Classification
 
-## Task Description
-In this task, you will build a Convolutional Neural Network (CNN) for image classification. The goal is to classify images into two categories: **dogs** and **cats**. You will:
+## 📌 Overview
+This project is part of my AI Bootcamp journey, where I implemented a **Convolutional Neural Network (CNN)** to classify images of cats and dogs. The goal is to explore deep learning techniques for image classification, improve performance through experimentation, and reflect on the training process.
 
-1. Preprocess and explore the dataset.
-2. Build and train a CNN classification model.
-3. Evaluate the model's performance using appropriate metrics.
-4. Record your findings and observations under the **Findings** section.
+## 🧠 What I Did
+- Preprocessed and explored the dataset.
+- Built and trained multiple CNN models using TensorFlow & Keras.
+- Tuned hyperparameters to overcome overfitting and boost accuracy.
+- Evaluated the model using standard classification metrics.
+- Visualized training performance and results.
+- Documented my findings and lessons learned.
 
+---
 
-## Dataset
-The dataset used for this task is **Dogs vs. Cats**:
+## 📂 Dataset
+The dataset used is the well-known **Dogs vs. Cats** dataset:
 
-[Kaggle Dataset - Dog vs. Cat](https://www.kaggle.com/datasets/anthonytherrien/dog-vs-cat)
+🔗 [Kaggle: Dog vs. Cat](https://www.kaggle.com/datasets/anthonytherrien/dog-vs-cat)
 
-### Dataset Details:
-- **Content**: Images of dogs and cats.
-- **Format**: JPEG images.
-- **Labels**: 0 for cat, 1 for dog.
+**Dataset Details:**
+- Format: JPEG images
+- Categories: 0 = Cat, 1 = Dog
 
+---
 
-## Requirements
+## 🧪 Model Architecture & Requirements
 
-1. **Model Requirements**:
-   - Build a CNN model.
-   - Include at least:
-     - Input layer for image data.
-     - Multiple convolutional layers with appropriate activation functions.
-     - Pooling layers (e.g., MaxPooling).
-     - Fully connected layers leading to a softmax or sigmoid output.
-   - Use **binary cross-entropy** as the loss function for binary classification.
+### 🧱 CNN Architecture Includes:
+- Input layer for 224x224 resized images
+- Multiple convolutional layers with ReLU activations
+- MaxPooling layers to reduce spatial dimensions
+- Fully connected (dense) layers
+- Sigmoid output layer for binary classification
 
-2. **Evaluation**:
-   - Use metrics such as **accuracy**, **precision**, **recall**, and **F1-score**.
-   - Create visualizations for:
-     - Model training and validation loss.
-     - Model training and validation accuracy.
-     - Confusion matrix.
+### ⚙️ Loss & Metrics
+- **Loss Function**: Binary Cross-Entropy
+- **Evaluation Metrics**:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-Score
 
-3. **Documentation**:
-   - Clearly document:
-     - The architecture of the CNN model.
-     - Evaluation results.
+### 📊 Visualizations
+- Training/validation accuracy & loss plots
+- Confusion matrix for model evaluation
 
-## Findings
-Document your results and observations here:
-1. For the first hyperparameter model:
-   - **Accuracy**: 88%
-   - **Loss**: 0.4693
-   - **Observations**:
-      - The CNN model seems to overfitts 
-      - The loss seems to be a little bit acceptable
-      - It may needs some techinique on improving & early stopping to solve the overfitts problem
-2. For the second hyperparameter model:
-   - **Accuracy**: ~94%
-   - **Loss**: 0.12
-   - **Observations**:
-      - As we can see thats increasing the `stride` & `MaxPooling` helps to overcome the overfitting.
-      - The `EarlyStopping` really efficient when it comes to trying to absolutly avoid the overfitting as we can see in the above figures.
+---
 
-Add more details as needed to describe your experiments and outcomes.
+## 📈 Results & Observations
 
+### 🔁 Model 1 (Baseline Hyperparameters)
+- **Accuracy**: ~88%
+- **Loss**: 0.4693
+- **Observations**:
+  - Signs of overfitting noticed after a few epochs
+  - Acceptable loss but model could be more robust
+  - No use of regularization or early stopping
 
-## References
+### 🧪 Model 2 (Tuned Hyperparameters)
+- **Accuracy**: ~94%
+- **Loss**: 0.12
+- **Observations**:
+  - Using `stride` adjustments and `MaxPooling` improved generalization
+  - Adding `EarlyStopping` helped reduce overfitting significantly
+  - More stable training and better validation performance
+
+> I might explore adding dropout or batch normalization in future versions.
+
+---
+
+## 📚 References
 - [TensorFlow Documentation](https://www.tensorflow.org/)
 - [Keras Examples](https://keras.io/examples/)
-- [Dataset on Kaggle](https://www.kaggle.com/datasets/anthonytherrien/dog-vs-cat)
+- [Dogs vs. Cats Dataset](https://www.kaggle.com/datasets/anthonytherrien/dog-vs-cat)
+
+---
+
+## 🙌 Credits
+This project was developed as part of the **AI Model Building & Development Bootcamp** at Tuwaiq Academy. Special thanks to our instructors for their guidance throughout the course.
